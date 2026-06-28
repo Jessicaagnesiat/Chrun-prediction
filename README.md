@@ -1,73 +1,238 @@
-# Customer Churn Prediction using Random Forest and SMOTE
+# 🤖 Customer Churn Prediction using Machine Learning
 
-## Overview
-Customer churn is a critical challenge for telecommunication companies, as retaining existing customers is significantly more cost-effective than acquiring new ones.  
-This project builds a machine learning model to predict customer churn by analyzing customer behavior, handling class imbalance, and evaluating model performance using robust metrics.
+> **Predicting customer churn using Machine Learning to help businesses identify at-risk customers and improve customer retention strategies.**
 
-## Problem Statement
-Customer churn data is highly imbalanced and influenced by multiple behavioral factors, making it difficult for businesses to accurately identify customers who are likely to leave.
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikitlearn)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge)
+![Seaborn](https://img.shields.io/badge/Seaborn-4C72B0?style=for-the-badge)
 
-## Objectives
-- Predict customer churn using machine learning models  
-- Handle class imbalance to improve churn detection  
-- Compare model performance and select the most reliable model  
-- Support data-driven customer retention strategies  
+---
 
-## Dataset
-- **Source:** Telco Customer Churn Dataset  
-- **Records:** 7,043 customers  
-- **Features:** Demographics, services, contract details, billing, and charges  
-- **Target Variable:** `Churn` (Yes / No)
+# 📌 Project Overview
 
-## Methodology
-1. **Exploratory Data Analysis (EDA)**
-   - Analyzed churn distribution and customer behavior patterns
-2. **Data Preprocessing**
-   - Converted data types and handled missing values
-   - Encoded categorical variables using Label Encoding
-   - Scaled numerical features
-3. **Handling Imbalanced Data**
-   - Applied **SMOTE (Synthetic Minority Oversampling Technique)** to balance churn classes
-4. **Modeling**
-   - Trained and evaluated:
-     - Random Forest Classifier
-     - Decision Tree Classifier
-5. **Model Evaluation**
-   - Used K-Fold Cross Validation
-   - Evaluation metrics: Precision, Recall, F1-score, Accuracy, ROC-AUC
+Customer churn is one of the biggest challenges for subscription-based businesses because losing existing customers directly impacts recurring revenue and increases customer acquisition costs.
 
-## Model Performance
-- **Best Model:** Random Forest (K-Fold)
-- **Cross-Validation F1-score:** 0.85 (stable across folds)
-- **Test Set Performance:**
-  - Accuracy: 77.5%
-  - Precision: 57%
-  - Recall: 57.6%
-  - F1-score: 57.5%
-  - ROC-AUC: **0.82**
+This project develops an end-to-end machine learning pipeline to predict customers who are likely to churn. The analysis includes data preprocessing, imbalance handling using SMOTE, model comparison, cross-validation, and performance evaluation to identify the most reliable predictive model.
 
-The high ROC-AUC score indicates strong capability in distinguishing churn and non-churn customers despite class imbalance.
+---
 
-## Results & Insights
-- Random Forest outperformed Decision Tree in both performance and stability
-- SMOTE significantly improved churn detection
-- The model generalizes well to unseen data and is suitable for churn risk identification
+# 🎯 Business Problem
 
-## Business Impact
-- Enables early identification of high-risk customers
-- Supports targeted retention strategies
-- Reduces customer acquisition costs
-- Improves customer loyalty and long-term revenue
+Businesses often struggle to identify customers who are likely to discontinue their services. Without an accurate churn prediction model, customer retention campaigns become reactive instead of proactive, resulting in higher customer acquisition costs and lost revenue.
 
-## Tools & Libraries
+---
+
+# 🎯 Project Goals
+
+- Predict customers who are likely to churn.
+- Handle imbalanced customer data using SMOTE.
+- Compare multiple classification models.
+- Evaluate model performance using cross-validation and test data.
+- Select the most stable and accurate model.
+- Support customer retention strategies through predictive analytics.
+
+---
+
+# 📂 Dataset
+
+**Telco Customer Churn Dataset**
+
+The dataset contains customer demographic information, subscription details, billing information, and service usage collected from a telecommunications company.
+
+### Target Variable
+
+- **Churn**
+  - Yes
+  - No
+
+### Dataset Features
+
+- Customer demographics
+- Contract type
+- Payment method
+- Internet services
+- Monthly charges
+- Total charges
+- Customer tenure
+- Additional service subscriptions
+
+---
+
+# 🛠️ Tools & Technologies
+
 - Python
-- Pandas, NumPy
-- Scikit-learn
-- Imbalanced-learn (SMOTE)
-- Matplotlib, Seaborn
+- Pandas
+- NumPy
+- Scikit-Learn
+- Matplotlib
+- Seaborn
+- Jupyter Notebook
 
-## Conclusion
-Random Forest combined with SMOTE provides a reliable and stable approach for customer churn prediction, offering valuable insights for proactive customer retention strategies.
+---
 
-## Author
-Jessica Agnesia Tataung
+# 🔍 Analysis Techniques
+
+- Data Cleaning
+- Exploratory Data Analysis (EDA)
+- Missing Value Handling
+- Label Encoding
+- Feature Scaling
+- SMOTE Oversampling
+- Random Forest Classification
+- Decision Tree Classification
+- Cross Validation
+- K-Fold Cross Validation
+- Model Evaluation
+- ROC Curve Analysis
+
+---
+
+# 🏗️ Project Workflow
+
+```text
+Raw Dataset
+      │
+      ▼
+Data Cleaning
+      │
+      ▼
+EDA
+      │
+      ▼
+Missing Value Handling
+      │
+      ▼
+Label Encoding
+      │
+      ▼
+SMOTE Oversampling
+      │
+      ▼
+Feature Scaling
+      │
+      ▼
+Random Forest
+      │
+      ▼
+Decision Tree
+      │
+      ▼
+Cross Validation
+      │
+      ▼
+Model Evaluation
+      │
+      ▼
+Business Recommendation
+```
+
+---
+
+# 📊 Model Performance
+
+| Metric | Random Forest |
+|---------|--------------:|
+| Accuracy | **77.50%** |
+| Precision | **57.49%** |
+| Recall | **57.64%** |
+| F1-Score | **57.56%** |
+| ROC-AUC | **82.42%** |
+
+---
+
+# 🔍 Key Findings
+
+- Customer churn data was highly imbalanced and required SMOTE oversampling.
+- Random Forest consistently outperformed Decision Tree in overall classification performance.
+- K-Fold Cross Validation achieved an average F1-score of **84.9%** with very low standard deviation, indicating strong model stability.
+- The final Random Forest model achieved a **ROC-AUC score of 82.42%**, demonstrating good discrimination between churn and non-churn customers.
+- The model can serve as an effective early warning system for identifying customers at high risk of churning.
+
+---
+
+# 💡 Business Recommendations
+
+| Recommendation | Business Value |
+|---------------|----------------|
+| Identify customers with high predicted churn probability. | Enable proactive customer retention initiatives before customers leave. |
+| Offer personalized retention campaigns. | Increase customer engagement and reduce churn rates. |
+| Provide loyalty rewards or exclusive offers to high-risk customers. | Improve customer lifetime value (CLV). |
+| Monitor churn predictions regularly using updated customer data. | Support proactive and data-driven business decisions. |
+| Retrain the prediction model periodically. | Maintain prediction accuracy as customer behavior evolves. |
+
+---
+
+# 🚀 Business Impact
+
+This project demonstrates how predictive analytics can help businesses:
+
+- Reduce customer churn.
+- Improve customer retention.
+- Increase customer lifetime value.
+- Lower customer acquisition costs.
+- Support data-driven marketing and customer relationship strategies.
+
+---
+
+# 🧠 Skills Demonstrated
+
+- Machine Learning
+- Classification Modeling
+- Random Forest
+- Decision Tree
+- SMOTE
+- Feature Engineering
+- Cross Validation
+- K-Fold Validation
+- Model Evaluation
+- ROC Curve Analysis
+- Predictive Analytics
+
+---
+
+# 📊 Visualizations
+
+- Customer Churn Distribution
+- ROC Curve
+- Confusion Matrix
+- Model Performance Comparison
+- Feature Importance
+
+---
+
+# 📁 Repository Structure
+
+```text
+Customer-Churn-Prediction
+│
+├── notebook/
+│   └── Customer_Churn_Prediction.ipynb
+│
+├── images/
+│   ├── churn_distribution.png
+│   ├── roc_curve.png
+│   ├── confusion_matrix.png
+│   ├── feature_importance.png
+│   └── model_comparison.png
+│
+└── README.md
+```
+
+---
+
+# 👩‍💻 Author
+
+**Jessica Agnesia Tataung**
+
+- LinkedIn: https://www.linkedin.com/in/jessicaagnesiat/
+
+🌐 Portfolio Website
+
+https://jessicaagnesiat.github.io/portofolio-data-scientist/
+
+---
+
+⭐ If you found this project useful, feel free to give it a star!
