@@ -197,9 +197,7 @@ This project demonstrates how predictive analytics can help businesses:
 
 - Customer Churn Distribution
 - ROC Curve
-- Confusion Matrix
-- Model Performance Comparison
-- Feature Importance
+- Model Performance Evaluation
 
 ---
 
@@ -213,10 +211,7 @@ Customer-Churn-Prediction
 │
 ├── images/
 │   ├── churn_distribution.png
-│   ├── roc_curve.png
-│   ├── confusion_matrix.png
-│   ├── feature_importance.png
-│   └── model_comparison.png
+│   └── roc_curve.png
 │
 └── README.md
 ```
